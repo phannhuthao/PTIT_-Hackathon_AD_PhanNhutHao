@@ -36,11 +36,11 @@ const Todo: React.FC = () => {
 
     const addTask = () => {
         if (inputValue.trim() === '') {
-            setError('Không được để tên trống.');
+            setError('Không được để tên trống trong ô.');
             return;
         }
         if (tasks.some(task => task.name === inputValue)) {
-            setError('Không được đặt tên đã có sẵn ');
+            setError('Không được đặt tên đã có sẵn trong dữ liệu');
             return;
         }
 
@@ -67,7 +67,7 @@ const Todo: React.FC = () => {
 
     const saveEditedTask = (id: number) => {
         if (editInputValue.trim() === '') {
-            setError('Không được để tên trống.');
+            setError('Không được để tên trống .');
             return;
         }
 
@@ -85,13 +85,13 @@ const Todo: React.FC = () => {
     };
 
     const deleteAllTasks = () => {
-        if (window.confirm('Bạn có muốn chọn delete all tasks?')) {
+        if (window.confirm('Bạn chọn delete all tasks ?')) {
             setTasks([]);
         }
     };
 
     const deleteDoneTasks = () => {
-        if (window.confirm('Bạn có muốn chọn delete all completed tasks?')) {
+        if (window.confirm('Bạn chọn delete all completed tasks ?')) {
             setTasks(tasks.filter(task => !task.completed));
         }
     };
@@ -112,7 +112,7 @@ const Todo: React.FC = () => {
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                     className='task-input'
-                    placeholder='New todo...'
+                    placeholder='New Todo...'
                 />
                 <br />
                 <button className='add-button' onClick={addTask}>Add new task</button>
